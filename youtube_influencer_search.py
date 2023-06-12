@@ -34,7 +34,7 @@ def output_results(item, response_channel_info, formatted_subscriber_num, subscr
             ###### Movie Info
             - Description Excerpt:  
             {item['snippet']['description']}
-            - Published: {item['snippet']['publishedAt']}
+            - Published: {item['snippet']['publishedAt'].split('T')[0]}
         """)
 
     # Results: The channel of the title
@@ -60,7 +60,7 @@ col1, col2 = st.columns(2, gap="medium")
 ### Streamlit Screen: Sidebar
 st.sidebar.title('Youtube Influencer Search')
 ## Filters when search
-st.sidebar.subheader('Search Filters')
+st.sidebar.subheader('Search Conditions')
 # Search keywords: required
 keywords = st.sidebar.text_input(label="Search Movie by Keywords", value="YouTube Influencer")
 # maxResults
@@ -122,4 +122,4 @@ else:
                             output_results(item, response_channel_info, formatted_subscriber_num, subscriber_num)
 
             if results_counter == 0:
-                st.warning('No results. Please change the search keywords or filters.')
+                st.warning('No results. Please change the search conditions or output filters.')
