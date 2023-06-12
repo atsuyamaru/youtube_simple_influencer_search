@@ -62,7 +62,7 @@ st.sidebar.title('Youtube Influencer Search')
 ## Filters when search
 st.sidebar.subheader('Search Conditions')
 # Search keywords: required
-keywords = st.sidebar.text_input(label="Search Movie by Keywords", value="python tutorial")
+keywords = st.sidebar.text_input(label="Search Movie by Keywords", value="python tutorial free")
 # maxResults
 max_results = st.sidebar.slider(label="Max Search Results", min_value=1, max_value=50, value=5, step=1)
 # search item type
@@ -75,7 +75,7 @@ st.sidebar.subheader('Output Filters')
 # Min Subscribers
 min_subscriber_num = st.sidebar.number_input(label="Min Subscribers", min_value=0, max_value=None, value=1000, step=1)
 # Max Subscribers
-max_subscriber_num = st.sidebar.number_input(label="Max Subscribers", min_value=0, max_value=None, value=120000, step=1, format=None)
+max_subscriber_num = st.sidebar.number_input(label="Max Subscribers", min_value=0, max_value=None, value=1_200_000, step=1, format=None)
 
 ## Find movies by Search keywords: search().list()
 if not keywords:
