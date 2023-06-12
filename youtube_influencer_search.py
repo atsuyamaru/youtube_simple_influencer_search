@@ -62,7 +62,7 @@ st.sidebar.title('Youtube Influencer Search')
 ## Filters when search
 st.sidebar.subheader('Search Conditions')
 # Search keywords: required
-keywords = st.sidebar.text_input(label="Search Movie by Keywords", value="YouTube Influencer")
+keywords = st.sidebar.text_input(label="Search Movie by Keywords", value="python tutorial")
 # maxResults
 max_results = st.sidebar.slider(label="Max Search Results", min_value=1, max_value=50, value=5, step=1)
 # search item type
