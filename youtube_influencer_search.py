@@ -73,7 +73,7 @@ st.sidebar.divider()
 ## Filters when output
 st.sidebar.subheader('Output Filters')
 # Min Subscribers
-min_subscriber_num = st.sidebar.number_input(label="Min Subscribers", min_value=0, max_value=None, value=1000, step=10000)
+min_subscriber_num = st.sidebar.number_input(label="Min Subscribers", min_value=0, max_value=None, value=10000, step=10000)
 # Max Subscribers
 max_subscriber_num = st.sidebar.number_input(label="Max Subscribers", min_value=0, max_value=None, value=1_200_000, step=10000)
 
