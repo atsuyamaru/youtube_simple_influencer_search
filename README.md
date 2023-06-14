@@ -1,6 +1,7 @@
 # youtube_simple_influencer_search with Streamlit, through YouTube API
 this app allows you to find YouTube Influencer candidates easily.  
-Filtering the number of subscribers helps you find candidates efficiently.
+Filtering the number of subscribers helps you find candidates efficiently.  
+You can easily access the contact information of every candidate with the direct contact page links.
   
 Made with Streamlit,and python > 3.7.  
 Check requirements.txt for more packages information.
