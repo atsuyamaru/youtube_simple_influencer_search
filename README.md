@@ -15,7 +15,7 @@ And set your API key to your environment variable as $YOUTUBE_API_KEY
   
 If you deploy at the Streamlit Community Cloud, you should set $YOUTUBE_API_KEY in the "secret" config of Streamlit Community Cloud.
 
-## Reference by me (Japanese)
+## Reference written by me (Japanese)
 * [PythonでYouTube Data APIを利用！GCPでのAPIキー作成から解説](https://scr.marketing-wizard.biz/dev/python-youtube-api-gcp)
 * [PythonでYouTube Data API v3のSearch:Listを操作: YouTubeデータ分析](https://scr.marketing-wizard.biz/dev/youtube-dataapi-v3-search-list)
 * [Streamlit Community CloudでWebアプリを公開する際の準備事項](https://scr.marketing-wizard.biz/dev/streamlit-community-cloud-publish)
