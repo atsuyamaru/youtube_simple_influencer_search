@@ -2,7 +2,7 @@
 this app allows you to find YouTube Influencer candidates easily.  
 Filtering the number of subscribers helps you find candidates efficiently.
   
-Made with Streamlit,and python > 3.7.
+Made with Streamlit,and python > 3.7.  
 Check requirements.txt for more packages information.
 
 ## ScreenShot
