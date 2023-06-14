@@ -11,3 +11,5 @@ Check requirements.txt for more packages information.
 ## How to Use
 Get your YouTube Data API key.  
 And set your API key to your environment variable as $YOUTUBE_API_KEY
+  
+If you deploy at the Streamlit Community Cloud, you should set $YOUTUBE_API_KEY in the "secret" config of Streamlit Community Cloud.
