@@ -64,18 +64,24 @@ st.sidebar.subheader('Search Conditions')
 # Search keywords: required
 keywords = st.sidebar.text_input(label="Search Movie by Keywords", value="python tutorial free")
 # maxResults
-max_results = st.sidebar.slider(label="Max Search Results", min_value=1, max_value=50, value=5, step=1)
+max_results = st.sidebar.slider(label="Max Search Results", min_value=1, max_value=50, value=20, step=1)
 # search item type
 search_type_list = st.sidebar.multiselect(label="Search Target Type", options=['video', 'channel', 'playlist'], default=['video'])
 search_type_str = ','.join(search_type_list)
 st.sidebar.divider()
 
 ## Filters when output
-st.sidebar.subheader('Output Filters')
-# Min Subscribers
-min_subscriber_num = st.sidebar.number_input(label="Min Subscribers", min_value=0, max_value=None, value=10000, step=10000)
-# Max Subscribers
-max_subscriber_num = st.sidebar.number_input(label="Max Subscribers", min_value=0, max_value=None, value=1_200_000, step=10000)
+# st.sidebar.subheader('Output Filters')
+output_filter = st.sidebar.checkbox(label="Output Filters", value=False)
+if output_filter:
+    # Min Subscribers
+    min_subscriber_num = st.sidebar.number_input(label="Min Subscribers", min_value=0, max_value=None, value=10000, step=10000)
+    # Max Subscribers
+    max_subscriber_num = st.sidebar.number_input(label="Max Subscribers", min_value=0, max_value=None, value=1_200_000, step=10000)
+if not output_filter:
+    min_subscriber_num = 0
+    max_subscriber_num = 1_200_000_000_000
+st.sidebar.divider()
 
 ## Find movies by Search keywords: search().list()
 if not keywords:
