@@ -92,7 +92,7 @@ st.sidebar.divider()
 ## Find movies by Search keywords: search().list()
 search_executed = False
 if not search_executed:
-    st.info('Please enter keywords and click the "Search" button from the sidebar.')
+    st.info('Please enter keywords and click the "Search" button from the left sidebar.')
 
 if not keywords:
     st.warning('Please enter keywords.')
