@@ -170,4 +170,4 @@ else:
             elif len(all_results_list) == 0:
                 st.warning('No results. Please change the keywords, search conditions or output filters.')
 
-        
+st.sidebar.divider()        
