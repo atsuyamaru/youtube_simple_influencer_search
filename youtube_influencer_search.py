@@ -70,21 +70,25 @@ search_type_list = st.sidebar.multiselect(label="Search Target Type", options=['
 search_type_str = ','.join(search_type_list)
 st.sidebar.divider()
 
+## Exclude Channel Doubling
+st.sidebar.subheader("Exclude Channel Doubling")
+exclude_channel_doubling = st.sidebar.checkbox("Exclude Channel Doubling", value=True)
+
 ## Sort the results
 st.sidebar.subheader('Sort the Results')
 with st.sidebar.expander("Sort Options", expanded=False):
     sort_option = st.radio(label="Sort the Results by", options=['Subscriber Number Descending', 'Subscriber Number Ascending', 'Newest to Oldest', 'Oldest to Newest'], index=0)
 
 ## Filters when output
-st.sidebar.subheader('Output Filters')
-output_filter = st.sidebar.checkbox(label="Output Filters", value=False)
-if output_filter:
-    st.sidebar.warning("'Output Filters' narrow down the search results. This means that the filtered results number may be smaller than the 'Max Search Results' number specified above.")
+st.sidebar.subheader('Subscriber Number Filters')
+subscriber_filter = st.sidebar.checkbox(label="Subscriber Number Filters", value=False)
+if subscriber_filter:
+    st.sidebar.warning("'Subscriber Number Filters' narrow down the search results. This means that the filtered results number may be smaller than the 'Max Search Results' number specified above.")
     # Min Subscribers
     min_subscriber_num = st.sidebar.number_input(label="Min Subscribers", min_value=0, max_value=None, value=10000, step=10000)
     # Max Subscribers
     max_subscriber_num = st.sidebar.number_input(label="Max Subscribers", min_value=0, max_value=None, value=1_200_000, step=10000)
-if not output_filter:
+if not subscriber_filter:
     min_subscriber_num = 0
     max_subscriber_num = 1_200_000_000_000
 st.sidebar.divider()
@@ -141,6 +145,12 @@ else:
                     results_dict['channel_title'] = item['snippet']['channelTitle']
                     results_dict['channel_description'] = response_channel_info['items'][0]['snippet']['description']
                     results_dict['custom_url'] = response_channel_info['items'][0]['snippet']['customUrl']
+                    
+                    # Skip the channel doubling if the option is checked
+                    if exclude_channel_doubling:
+                        if results_dict['custom_url'] in [x['custom_url'] for x in all_results_list]:
+                            continue
+                    # Append the results info to the list
                     all_results_list.append(results_dict)
 
             # Output the results
